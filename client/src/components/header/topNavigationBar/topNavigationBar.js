@@ -28,7 +28,7 @@ export const TopNavigationBar = ({cart}) => {
             ) : ("")}
           </div>
         </Link>
-        <Link to="">
+        <Link to="/login">
           <div className={styles.mypage}>
             <img src="/images/icon-user.svg" alt="user" />
             <span>로그인</span>

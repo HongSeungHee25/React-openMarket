@@ -23,7 +23,7 @@ connection.connect();
 const multer = require('multer');
 const upload = multer({dest: './upload'})
 
-app.get('/api/customers', (req,res)=>{
+app.get('/api/products', (req,res)=>{
     connection.query(
       "SELECT * FROM products order by createdDate",
       (err, rows, fields)=>{
@@ -34,7 +34,7 @@ app.get('/api/customers', (req,res)=>{
 
 app.use('/image',express.static('./upload'));
 
-app.post('/api/customers', upload.single('image'),(req,res)=>{
+app.post('/api/products', upload.single('image'),(req,res)=>{
   let sql = 'INSERT INTO products VALUES(null,?,?,?,?,now())';
   let image = '/image/'+req.file.filename;
   let name = req.body.name;

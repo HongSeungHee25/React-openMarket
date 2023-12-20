@@ -6,6 +6,9 @@ import Product from "./pages/product";
 import Basket from "./pages/basket";
 import { useState } from "react";
 import Footer from "./components/footer/footer";
+import { SignIn }  from "./sign/signin";
+import SignUp from "./sign/signup";
+
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -22,8 +25,9 @@ function App() {
         <Route path="/" element={<Home products={products} setProducts={setProducts} convertPrice={convertPrice} />} />
         <Route path="/product/:id" element={<Product convertPrice={convertPrice} cart={cart} setCart={setCart}/>} />
         <Route path="/cart" element={<Basket cart={cart} setCart={setCart} convertPrice={convertPrice} checkLists={checkLists} setCheckLists={setCheckLists}/>} />
+        <Route path="/login" element={<SignUp />} />
       </Routes>
-        <Footer />
+        {/* <Footer /> */}
     </BrowserRouter>
   );
 }
