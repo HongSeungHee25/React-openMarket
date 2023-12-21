@@ -8,6 +8,7 @@ import { useState } from "react";
 import Footer from "./components/footer/footer";
 import { SignIn }  from "./sign/signin";
 import SignUp from "./sign/signup";
+import CustomerAdd from "./pages/CustomerAdd";
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
         <Route path="/" element={<Home products={products} setProducts={setProducts} convertPrice={convertPrice} />} />
         <Route path="/product/:id" element={<Product convertPrice={convertPrice} cart={cart} setCart={setCart}/>} />
         <Route path="/cart" element={<Basket cart={cart} setCart={setCart} convertPrice={convertPrice} checkLists={checkLists} setCheckLists={setCheckLists}/>} />
-        <Route path="/login" element={<SignUp />} />
+        <Route path="/login" element={<CustomerAdd />} />
       </Routes>
         {/* <Footer /> */}
     </BrowserRouter>
